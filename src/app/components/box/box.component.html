@@ -1,0 +1,6 @@
+<div class="box">
+  <div class="box-title" (click)="showhide = !showhide">{{ title }}</div>
+  <div class="box-content" [hidden]="showhide">
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="container pt-3">
+  <input type="text" [(ngModel)]="txt" class="form-control"/>
+  <button [disabled]="txt.length === 0" class="btn btn-primary">Send</button>
+  {{ txt }}
+
+  <app-box-form (dataOutput)="onSave($event)"></app-box-form>
+
+  <app-box [title]="'Chuck Norris, le héro universel (respect)'">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1J0VEleEkvWd8Hd6SN-sxGOZwbw-fKhGqLobZsWCrXqSKaM8sWg" />
+  </app-box>
+
+  <app-box *ngFor="let item of boxData" [title]="item.title">
+    <p>{{ item.content }}</p>
+    <div>{{ item.date | date:'dd/MM/yyyy' }}</div>
+  </app-box>
+
+</div>
