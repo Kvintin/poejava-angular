@@ -10,16 +10,23 @@ export class BoxFormComponent implements OnInit {
 
   form = {
     title: '',
-    content: ''
+    content: '',
+    toggle: false
   };
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  valid(): boolean {
+    return this.form.title !== '' && this.form.content !== '';
+  }
 
   onAdd() {
-    this.dataOutput.emit({...this.form, date: new Date()});
-    this.form.title = '';
-    this.form.content = '';
+    if (this.valid()) {
+      this.dataOutput.emit({...this.form, date: new Date()});
+      this.form.title = '';
+      this.form.content = '';
+    }
   }
 }

@@ -7,10 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BoxComponent implements OnInit {
   @Input() title = 'Undefined title';
+  @Input() showhide = false;
+
   content = '';
-  showhide = false;
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
