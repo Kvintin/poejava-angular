@@ -1,22 +1,16 @@
+<app-navbar></app-navbar>
+
 <div class="container pt-3">
+  <!-- <app-demo></app-demo> -->
 
-  <h1>{{ chuckQuote.value }}</h1>
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Content Page</h1>
+    </div>
 
-  <input type="text" [(ngModel)]="txt" class="form-control"/>
-  <button [disabled]="txt.length === 0" class="btn btn-sm btn-primary">Send</button>
-  {{ txt }}
-
-  <app-box-form (dataOutput)="onSave($event)"></app-box-form>
-
-  <app-box [showhide]="true" [title]="'Chuck Norris, le héro universel (respect)'">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1J0VEleEkvWd8Hd6SN-sxGOZwbw-fKhGqLobZsWCrXqSKaM8sWg" />
-  </app-box>
-
-  <app-box *ngFor="let item of boxData; let i = index" [title]="item.title" [showhide]="item.toggle">
-    <p>{{ item.content }}</p>
-    <div>{{ item.date | date:'dd/MM/yyyy' }}</div>
-
-    <button (click)="onDelete(i)" class="btn btn-sm btn-outline-danger">Supprimer</button>
-  </app-box>
+    <div class="col-md-4">
+      <h3>Panel</h3>
+    </div>
+  </div>
 
 </div>
