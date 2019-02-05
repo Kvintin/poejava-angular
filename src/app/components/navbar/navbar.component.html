@@ -14,14 +14,15 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Demo</a>
+          <a class="nav-link" href="#" routerLink="/demo">Demo</a>
         </li>
 
         <li ngbDropdown class="d-inline-block nav-item dropdown">
-          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button" id="dropdownBasic1" ngbDropdownToggle>Jobs</a>
+          <a style="cursor: pointer;" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button" id="dropdownBasic1" ngbDropdownToggle>Jobs</a>
+
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <a href="#" class="dropdown-item">Ajouter une Annonce</a>
-            <a href="#" class="dropdown-item">Lister les annonces</a>
+            <a href="#" routerLink="/jobs/add" class="dropdown-item">Ajouter une Annonce</a>
+            <a href="#" routerLink="/jobs/list" class="dropdown-item">Lister les annonces</a>
           </div>
         </li>
       </ul>
