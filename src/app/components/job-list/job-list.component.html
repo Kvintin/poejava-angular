@@ -1,5 +1,12 @@
-<p>
-  job-list works!
-</p>
 
-{{ jobs | json }}
+<div class="row">
+  <div class="col-sm-6" *ngFor="let job of jobs">
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">{{ job.title }}</h5>
+        <p class="card-text">{{ job.description }}</p>
+        <a href="#" class="card-link">Voir l'annonce</a>
+      </div>
+    </div>
+  </div>
+</div>
