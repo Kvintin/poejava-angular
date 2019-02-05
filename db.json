@@ -54,6 +54,17 @@
       "title": "Un super de job de DEV !!!",
       "description": "Ce job te feras découvrir angular comme jamais",
       "id": 11
+    },
+    {
+      "title": "DevAngular",
+      "company": "Aston",
+      "city": "Arcueil",
+      "zipcode": "94160",
+      "description": "Un super post de dev",
+      "contractType": "4",
+      "startDate": "2019-02-20",
+      "publishedDate": "2019-02-14",
+      "id": 12
     }
   ]
 }

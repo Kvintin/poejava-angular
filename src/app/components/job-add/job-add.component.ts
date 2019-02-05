@@ -41,7 +41,13 @@ export class JobAddComponent implements OnInit {
 
   onSave() {
     if (this.form.valid) {
-      console.log(this.form.value);
+      this.jobService.add(this.form.value)
+        .subscribe(
+          data => {},
+          err => {
+            console.log(err);
+          }
+        );
     } else {
       console.log("c'est pas valid");
     }
