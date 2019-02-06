@@ -14,6 +14,8 @@ import { DemoComponent } from './components/demo/demo.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { JobAddComponent } from './components/job-add/job-add.component';
 import { JobListComponent } from './components/job-list/job-list.component';
+import { DateDistancePipe } from './pipes/date-distance.pipe';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { JobListComponent } from './components/job-list/job-list.component';
     DemoComponent,
     NavbarComponent,
     JobAddComponent,
-    JobListComponent
+    JobListComponent,
+    DateDistancePipe,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -28,7 +28,7 @@ export class JobAddComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      title: ['', [Validators.required, Validators.pattern(/^[a-z\s\-]{2,10}$/i)]],
+      title: ['', [Validators.required, Validators.pattern(/^[a-z0-9\s\-]{2,255}$/i)]],
       company: '',
       city: '',
       zipcode: '',
@@ -43,13 +43,16 @@ export class JobAddComponent implements OnInit {
     if (this.form.valid) {
       this.jobService.add(this.form.value)
         .subscribe(
-          data => {},
+          data => {
+            this.form.reset();
+            this.router.navigate(['/jobs/list']);
+          },
           err => {
             console.log(err);
           }
         );
     } else {
-      console.log("c'est pas valid");
+      console.log('c\'est pas valid');
     }
   }
 

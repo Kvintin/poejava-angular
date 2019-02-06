@@ -4,8 +4,11 @@
     <div class="card mb-3">
       <div class="card-body">
         <h5 class="card-title">{{ job.title }}</h5>
-        <p class="card-text">{{ job.description }}</p>
-        <a href="#" class="card-link">Voir l'annonce</a>
+        <p class="card-text">{{ job.description | slice:0:80 }}...</p>
+
+        <a href="#" class="card-link" [routerLink]="['/jobs/details', job.id]">Voir l'annonce</a>
+
+        <div class="float-right">{{ job.publishedDate | dateDistance }}</div>
       </div>
     </div>
   </div>

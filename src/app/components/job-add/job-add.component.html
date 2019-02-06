@@ -1,18 +1,22 @@
 <h1>Ajouter une annonce</h1>
 
 <form [formGroup]="form" (ngSubmit)="onSave()">
-
   <div class="form-group">
     <label for="title">Titre</label>
     <input
       id="title"
       type="text"
       class="form-control"
-      [ngClass]="{'is-invalid': title.invalid && (title.dirty || title.touched)}"
+      [ngClass]="{
+        'is-invalid': title.invalid && (title.dirty || title.touched)
+      }"
       placeholder="Titre de l'annonce"
       formControlName="title"
     />
-    <div class="invalid-feedback" *ngIf="title.invalid && (title.dirty || title.touched)">
+    <div
+      class="invalid-feedback"
+      *ngIf="title.invalid && (title.dirty || title.touched)"
+    >
       <div *ngIf="title.errors.required">Champ requis</div>
       <div *ngIf="title.errors.pattern">Caracters invalid</div>
     </div>
@@ -20,23 +24,35 @@
 
   <div class="form-group">
     <label for="city">Ville</label>
-    <input type="text" id="city" class="form-control" formControlName="city">
+    <input type="text" id="city" class="form-control" formControlName="city" />
   </div>
 
   <div class="form-group">
     <label for="zipcode">Code Postal</label>
-    <input type="text" id="zipcode" class="form-control" formControlName="zipcode">
+    <input
+      type="text"
+      id="zipcode"
+      class="form-control"
+      formControlName="zipcode"
+    />
   </div>
 
   <div class="form-group">
     <label for="description">Description</label>
-    <input type="text" id="description" class="form-control" formControlName="description">
+    <textarea
+      type="text"
+      id="description"
+      class="form-control"
+      formControlName="description"></textarea>
   </div>
 
   <div class="form-group">
     <label>Type de contrat</label>
     <select formControlName="contractType" class="form-control">
-      <option *ngFor="let contractType of contractTypes" [value]="contractType.id">
+      <option
+        *ngFor="let contractType of contractTypes"
+        [value]="contractType.id"
+      >
         {{ contractType.label }}
       </option>
     </select>
@@ -44,18 +60,47 @@
 
   <div class="form-group">
     <label for="company">Société</label>
-    <input type="text" id="company" class="form-control" formControlName="company">
+    <input
+      type="text"
+      id="company"
+      class="form-control"
+      formControlName="company"
+    />
   </div>
 
   <div class="form-group">
     <label for="startDate">Date de démarrage</label>
-    <input type="date" id="startDate" class="form-control" formControlName="startDate"/>
+    <div class="input-group">
+      <input
+        class="form-control"
+        placeholder="yyyy-mm-dd"
+        name="dp"
+        formControlName="startDate"
+        (click)="sd.toggle()"
+        ngbDatepicker
+        id="startDate"
+        #sd="ngbDatepicker"
+      />
+    </div>
   </div>
 
   <div class="form-group">
     <label for="publishedDate">Date de publication</label>
-    <input type="date" id="publishedDate" class="form-control" formControlName="publishedDate" />
+    <div class="input-group">
+      <input
+        class="form-control"
+        placeholder="yyyy-mm-dd"
+        name="dp"
+        formControlName="publishedDate"
+        (click)="pd.toggle()"
+        ngbDatepicker
+        id="publishedDate"
+        #pd="ngbDatepicker"
+      />
+    </div>
   </div>
 
-  <button type="submit" [disabled]="form.invalid" class="btn btn-success mb-3">Ajouter</button>
+  <button type="submit" [disabled]="form.invalid" class="btn btn-success mb-3">
+    Ajouter
+  </button>
 </form>

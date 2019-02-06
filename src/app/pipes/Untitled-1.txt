@@ -1,0 +1,4 @@
+- Ajouter un nouveau composant (details)
+    Ce composant permet d'afficher les détails d'une annonce
+    Ce composant permettra aussi avec un bouton de supprimer
+    l'annonce afficher en détail.

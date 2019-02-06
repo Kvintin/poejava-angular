@@ -1,0 +1,10 @@
+<h1>Titre de l'annonce</h1>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ job.title }}</h5>
+    <p class="card-text">{{ job.description }}</p>
+    <a href="#" class="card-link">Editer</a>
+    <a href="#" (click)="onDelete($event)" class="card-link text-danger float-right">Supprimer</a>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+import { DetailsComponent } from './components/details/details.component';
 import { RouterModule, Route } from '@angular/router';
 import { NgModule } from '@angular/core';
 
@@ -12,6 +13,7 @@ const routes: Route[] = [
     children: [
       { path: 'add', component: JobAddComponent },
       { path: 'list', component: JobListComponent },
+      { path: 'details/:id', component: DetailsComponent },
     ]
   },
   { path: '**', component: DemoComponent }
